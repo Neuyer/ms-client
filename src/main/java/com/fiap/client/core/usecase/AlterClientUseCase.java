@@ -3,7 +3,6 @@ package com.fiap.client.core.usecase;
 import com.fiap.client.core.dto.CreateClientDTO;
 import com.fiap.client.core.entity.Client;
 import com.fiap.client.core.gateway.ClientGateway;
-import lombok.extern.log4j.Log4j2;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 

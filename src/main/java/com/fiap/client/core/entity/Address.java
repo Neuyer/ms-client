@@ -20,6 +20,16 @@ public class Address {
     }
 
     // Getters and Setters
+
+
+    public String get_id() {
+        return _id;
+    }
+
+    public String getNickName() {
+        return nickName;
+    }
+
     public String getStreet() {
         return street;
     }

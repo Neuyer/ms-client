@@ -21,7 +21,7 @@ public class ClientGatewayImpl implements ClientGateway {
 
     @Override
     public Optional<Client> findByDocument(String document) {
-        return clientRepository.findBySku(document)
+        return clientRepository.findByDocument(document)
                 .map(ClientMapper::toEntity);
     }
 
@@ -40,6 +40,6 @@ public class ClientGatewayImpl implements ClientGateway {
 
     @Override
     public void deleteByDocument(String document) {
-        clientRepository.deleteBySku(document);
+        clientRepository.deleteByDocument(document);
     }
 }

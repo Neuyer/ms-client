@@ -8,8 +8,8 @@ import java.util.Optional;
 
 @Repository
 public interface ClientRepository extends MongoRepository<ClientModel, String> {
-    Optional<ClientModel> findBySku(String sku);
+    Optional<ClientModel> findByDocument(String document);
 
-    void deleteBySku(String sku);
+    void deleteByDocument(String document);
 }
 

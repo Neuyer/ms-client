@@ -15,7 +15,7 @@ public class FindClientUseCase {
     }
 
     public Client execute(String document) {
-         log.info("Finding Client with doc: {}", document);
+        log.info("Finding Client with doc: {}", document);
         var productOpt = clientGateway.findByDocument(document);
 
         if (productOpt.isEmpty()) {
