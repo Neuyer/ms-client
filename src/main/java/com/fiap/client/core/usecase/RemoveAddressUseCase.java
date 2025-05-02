@@ -1,13 +1,9 @@
 package com.fiap.client.core.usecase;
 
-import com.fiap.client.core.dto.CreateAddressDTO;
-import com.fiap.client.core.entity.Address;
 import com.fiap.client.core.entity.Client;
 import com.fiap.client.core.gateway.ClientGateway;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-
-import java.util.UUID;
 
 @Slf4j
 @Service
