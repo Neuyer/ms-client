@@ -16,9 +16,9 @@ public class DeleteClientUseCase {
 
     public void execute(String document) {
         log.info("Deleting client with doc: {}", document);
-        var productOpt = clientGateway.findByDocument(document);
+        var clientOpt = clientGateway.findByDocument(document);
 
-        if (productOpt.isEmpty()) {
+        if (clientOpt.isEmpty()) {
             log.error("Client not found with doc: {}", document);
             throw new IllegalStateException("Client not found with doc: " + document);
         }

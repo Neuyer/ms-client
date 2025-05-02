@@ -16,14 +16,14 @@ public class FindClientUseCase {
 
     public Client execute(String document) {
         log.info("Finding Client with doc: {}", document);
-        var productOpt = clientGateway.findByDocument(document);
+        var clienttOpt = clientGateway.findByDocument(document);
 
-        if (productOpt.isEmpty()) {
+        if (clienttOpt.isEmpty()) {
             log.error("Client not found with doc: {}", document);
             throw new IllegalStateException("Client not found with doc: " + document);
         }
 
         log.info("Client found with doc: {}", document);
-        return productOpt.get();
+        return clienttOpt.get();
     }
 }

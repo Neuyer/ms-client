@@ -24,7 +24,7 @@ public class AlterClientUseCase {
         }
 
         var client = new Client(
-                clientOpt.get().get_id(),
+                clientOpt.get().getId(),
                 input.name(),
                 input.birthDate(),
                 input.document(),

@@ -19,6 +19,7 @@ public class CpfDocument extends Document {
             super();
         if(isValidCPF(value))
             this.setValue(value);
-        throw new IllegalStateException("Invalid CPF");
+        else
+            throw new IllegalStateException("Invalid CPF");
     }
 }

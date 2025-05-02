@@ -26,6 +26,12 @@ public class ClientGatewayImpl implements ClientGateway {
     }
 
     @Override
+    public Optional<Client> findById(String id) {
+        return clientRepository.findById(id)
+                .map(ClientMapper::toEntity);
+    }
+
+    @Override
     public Set<Client> findAll() {
         return clientRepository.findAll()
                 .stream()

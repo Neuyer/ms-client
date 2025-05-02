@@ -19,7 +19,7 @@ public abstract class ClientMapper {
 
     public static ClientModel toModel(Client client) {
         return ClientModel.builder()
-                .id(client.get_id())
+                .id(client.getId())
                 .name(client.getName())
                 .birthDate(client.getBirthDate())
                 .document(client.getDocument().getValue())

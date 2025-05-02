@@ -2,66 +2,64 @@ package com.fiap.client.core.entity;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Objects;
 
 public class Client {
-    private String _id;
-    private String name;
-    private LocalDate birthDate;
-    private CpfDocument document;
-    private List<Address> addresses;
+    private final String id;
+    private final String name;
+    private final LocalDate birthDate;
+    private final CpfDocument document;
+    private final List<Address> addresses;
 
-    public Client(String name, LocalDate birthDate, String document, List<Address> addresses) {
-        setName(name);
-        setBirthDate(birthDate);
-        setDocument(document);
-        setAddresses(addresses);
+    public Client(String id, String name, LocalDate birthDate, String document, List<Address> addresses) {
+        this.id = Objects.requireNonNull(id, "ID cannot be null");
+        this.name = Objects.requireNonNull(name, "Name cannot be null");
+        this.birthDate = Objects.requireNonNull(birthDate, "Birth Date cannot be null");
+        this.document = new CpfDocument(document);
+        this.addresses = Objects.requireNonNull(addresses, "Addresses cannot be null");
     }
 
-    public Client(String _id, String name, LocalDate birthDate, String document, List<Address> addresses) {
-        set_id(_id);
-        setName(name);
-        setBirthDate(birthDate);
-        setDocument(document);
-        setAddresses(addresses);
-    }
-
-    public String get_id() {
-        return _id;
-    }
-
-    public void set_id(String _id) {
-        this._id = _id;
+    public String getId() {
+        return id;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public LocalDate getBirthDate() {
         return birthDate;
-    }
-
-    public void setBirthDate(LocalDate birthDate) {
-        this.birthDate = birthDate;
     }
 
     public CpfDocument getDocument() {
         return document;
     }
 
-    public void setDocument(String document) {
-        this.document = new CpfDocument(document);
-    }
-
     public List<Address> getAddresses() {
         return addresses;
     }
 
-    public void setAddresses(List<Address> addresses) {
-        this.addresses = addresses;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Client)) return false;
+        Client client = (Client) o;
+        return id.equals(client.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
+    @Override
+    public String toString() {
+        return "Client{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", birthDate=" + birthDate +
+                ", document=" + document +
+                ", addresses=" + addresses +
+                '}';
     }
 }

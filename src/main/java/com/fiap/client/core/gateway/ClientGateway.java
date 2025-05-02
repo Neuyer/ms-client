@@ -7,6 +7,7 @@ import java.util.Set;
 
 public interface ClientGateway {
     Optional<Client> findByDocument(String document);
+    Optional<Client> findById(String id);
 
     Set<Client> findAll();
 
