@@ -1,0 +1,53 @@
+{
+  "databaseChangeLog": [
+    {
+      "changeSet": {
+        "id": "insert-clients",
+        "author": "Ariel ",
+        "comment": "Insert base clients",
+        "changes": [
+          {
+            "insertMany": {
+              "collectionName": "clients",
+              "documents": {
+                "$rawJson": [
+                  {
+                    "_id": "ed41b216-1ac5-4a12-847c-026f1a4b67bd",
+                    "name": "Teste1",
+                    "birthDate": "2010-05-10",
+                    "document": "12345678985",
+                    "addresses": [
+                      {
+                        "_id": "42a23549-dfd9-46dd-9d64-1fa2baed5671",
+                        "nickName": "casa",
+                        "street": "rua de casa",
+                        "city": "cidade de casa",
+                        "state": "estado de casa",
+                        "zipCode": "11060548",
+                        "number": 23
+                      }
+                    ]
+                  },
+                  {
+                    "_id": "576ed4b2-2128-45fd-b5c7-ec3a65f62638",
+                    "name": "Teste2",
+                    "birthDate": "2010-03-16",
+                    "document": "98765432125",
+                    "adresses":[{}]
+                  },
+                  {
+                    "_id": "6120aaf1-089f-4372-b98c-4ca7769ba67c",
+                    "name": "Teste3",
+                    "birthDate": "2002-12-16",
+                    "document": "45678912365",
+                    "adresses":[{}]
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
