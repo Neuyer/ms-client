@@ -13,15 +13,12 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @Slf4j
 public class LiquibaseMongoDBConfig {
-    //mongodb://localhost:17017/liquibase-db
     @Value("${spring.data.mongodb.uri}")
     private String connectionUrl;
 
-    //db-json/master.json
     @Value("${spring.liquibase.change-log.classpath}")
     private String changeLogFile;
 
-    /** Execute the update when start the application. > v.4.21 **/
     @Bean
     public CommandResults liquibaseUpdate() {
         try {
