@@ -16,7 +16,7 @@ public class Client {
         this.name = Objects.requireNonNull(name, "Name cannot be null");
         this.birthDate = Objects.requireNonNull(birthDate, "Birth Date cannot be null");
         this.document = new CpfDocument(document);
-        this.addresses = Objects.requireNonNull(addresses, "Addresses cannot be null");
+        this.addresses = Objects.isNull(addresses) ? List.of() : addresses;
     }
 
     public String getId() {
