@@ -2,7 +2,7 @@
   "databaseChangeLog": [
     {
       "changeSet": {
-        "id": "insert-clients",
+        "id": "insert-clients-v1",
         "author": "Ariel ",
         "comment": "Insert base clients",
         "changes": [
