@@ -1,6 +1,6 @@
 services:
-  ms-product-app:
-    image: evandroig/ms-product:latest
+  ms-client-app:
+    build: ./
     networks:
       - "ms-product-network"
     ports:
